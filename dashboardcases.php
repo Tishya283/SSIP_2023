@@ -11,65 +11,65 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $remark = $_POST['remark'];
 
     // Check which button was clicked
-    if (isset($_POST['approve'])) {
-        $data = mysqli_query($conn, "select * from register where phone_number=$id");
-        $row = mysqli_fetch_array($data);
+  //   if (isset($_POST['approve'])) {
+  //       $data = mysqli_query($conn, "select * from register where phone_number=$id");
+  //       $row = mysqli_fetch_array($data);
 
-        $accountSid = 'ACc1ec2c0c3ab4c0db70d65ca6c9a62586'; // Replace with your Twilio Account SID
-        $authToken = '8b2ae3915a17c7bf5b20d5f1470f6777';   // Replace with your Twilio Auth Token
-        $twilioPhoneNumber = '+14129069284';  // Replace with your Twilio Phone Number
+  //       $accountSid = 'ACc1ec2c0c3ab4c0db70d65ca6c9a62586'; // Replace with your Twilio Account SID
+  //       $authToken = '8b2ae3915a17c7bf5b20d5f1470f6777';   // Replace with your Twilio Auth Token
+  //       $twilioPhoneNumber = '+14129069284';  // Replace with your Twilio Phone Number
 
-        // Recipient's phone number (can be fetched from the database)
-        $recipientPhoneNumber = '+917778049568';  // Replace with the actual recipient's phone number
+  //       // Recipient's phone number (can be fetched from the database)
+  //       $recipientPhoneNumber = '+917778049568';  // Replace with the actual recipient's phone number
 
-        // Create a Twilio client
-        $twilio = new Client($accountSid, $authToken);
+  //       // Create a Twilio client
+  //       $twilio = new Client($accountSid, $authToken);
 
-        try {
-            // Send a message
-            $message = $twilio->messages->create(
-                $recipientPhoneNumber,
-                [
-                    'from' => $twilioPhoneNumber,
-                    'body' => $remark,
-                ]
-            );
+  //       try {
+  //           // Send a message
+  //           $message = $twilio->messages->create(
+  //               $recipientPhoneNumber,
+  //               [
+  //                   'from' => $twilioPhoneNumber,
+  //                   'body' => $remark,
+  //               ]
+  //           );
 
-            echo "Message sent successfully!";
-        } catch (Exception $e) {
-            echo "Error: " . $e->getMessage();
-        }
-    }
+  //           echo "Message sent successfully!";
+  //       } catch (Exception $e) {
+  //           echo "Error: " . $e->getMessage();
+  //       }
+  //   }
 
-    if (isset($_POST['reject'])) {
-      $data = mysqli_query($conn, "select * from register where phone_number=$id");
-      $row = mysqli_fetch_array($data);
+  //   if (isset($_POST['reject'])) {
+  //     $data = mysqli_query($conn, "select * from register where phone_number=$id");
+  //     $row = mysqli_fetch_array($data);
 
-      $accountSid = 'ACc1ec2c0c3ab4c0db70d65ca6c9a62586'; // Replace with your Twilio Account SID
-      $authToken = '8b2ae3915a17c7bf5b20d5f1470f6777';   // Replace with your Twilio Auth Token
-      $twilioPhoneNumber = '+14129069284';  // Replace with your Twilio Phone Number
+  //     $accountSid = 'ACc1ec2c0c3ab4c0db70d65ca6c9a62586'; // Replace with your Twilio Account SID
+  //     $authToken = '8b2ae3915a17c7bf5b20d5f1470f6777';   // Replace with your Twilio Auth Token
+  //     $twilioPhoneNumber = '+14129069284';  // Replace with your Twilio Phone Number
 
-      // Recipient's phone number (can be fetched from the database)
-      $recipientPhoneNumber = '+917016472708';  // Replace with the actual recipient's phone number
+  //     // Recipient's phone number (can be fetched from the database)
+  //     $recipientPhoneNumber = '+917016472708';  // Replace with the actual recipient's phone number
 
-      // Create a Twilio client
-      $twilio = new Client($accountSid, $authToken);
+  //     // Create a Twilio client
+  //     $twilio = new Client($accountSid, $authToken);
 
-      try {
-          // Send a message
-          $message = $twilio->messages->create(
-              $recipientPhoneNumber,
-              [
-                  'from' => $twilioPhoneNumber,
-                  'body' => $remark,
-              ]
-          );
+  //     try {
+  //         // Send a message
+  //         $message = $twilio->messages->create(
+  //             $recipientPhoneNumber,
+  //             [
+  //                 'from' => $twilioPhoneNumber,
+  //                 'body' => $remark,
+  //             ]
+  //         );
 
-          echo "Message sent successfully!";
-      } catch (Exception $e) {
-          echo "Error: " . $e->getMessage();
-      }
-  }
+  //         echo "Message sent successfully!";
+  //     } catch (Exception $e) {
+  //         echo "Error: " . $e->getMessage();
+  //     }
+  // }
 }
 ?>
 
