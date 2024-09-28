@@ -20,7 +20,7 @@ if(!isset($_SESSION['logedin']) || $_SESSION['logedin']!=true  )
 //         $data = mysqli_query($conn, "select * from register where ID=$id");
 //         $row = mysqli_fetch_array($data);
 
-//         $accountSid = 'ACc1ec2c0c3ab4c0db70d65ca6c9a62586'; // Replace with your Twilio Account SID
+
 //         $authToken = '8b2ae3915a17c7bf5b20d5f1470f6777';   // Replace with your Twilio Auth Token
 //         $twilioPhoneNumber = '+14129069284';  // Replace with your Twilio Phone Number
 
